@@ -23,10 +23,16 @@
       <h3>Deliver my taco masterpieces to...</h3>
       <label for="name">Name: </label>
       <input type="text" th:field="*{name}"/>
+      <span class="validationError"
+      th:if="${#fields.hasErrors('name')}"
+      th:errors="*{name}"></span>
       <br/>
 
       <label for="street">Street address: </label>
       <input type="text" th:field="*{street}"/>
+      <span class="validationError"
+      th:if="${#fields.hasErrors('street')}"
+      th:errors="*{street}"></span>
       <br/>
 
       <label for="city">City: </label>
@@ -44,6 +50,9 @@
       <h3>Here's how I'll pay...</h3>
       <label for="ccNumber">Credit Card #: </label>
       <input type="text" th:field="*{ccNumber}"/>
+      <span class="validationError"
+      th:if="${#fields.hasErrors('ccNumber')}"
+      th:errors="*{ccNumber}"></span>
       <br/>
 
       <label for="ccExpiration">Expiration: </label>
